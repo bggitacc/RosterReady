@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+hi Hello World!
+div.modal.fade
+    div.modal-dialog(role="document")
+        div.modal-content
+            div.modal-header
+            h5.modal-title Modal title
+            button.close(type="button", data-dismiss="modal", aria-label="Close")
+                span(aria-hidden="true") &times;
+            div.modal-body
+                p Modal Body Goes Here.
+                
+            div.modal-footer
+                button.btn.btn-primary(type="button") Save Changes
+                button.btn.btn-secondary(type="button", data-dismiss="modal", aria-label="Close")

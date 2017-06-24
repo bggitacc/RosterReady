@@ -1,0 +1,105 @@
+doctype html
+html
+  head
+    title= title
+ 
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp', crossorigin='anonymous')
+    link(rel='stylesheet', href='/stylesheets/style1.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    script(type="text/javascript", charset="utf-8", src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+ 
+    
+ 
+  
+  body
+   
+    nav.navbar.navbar-default.rrnav
+      div.container-fluid
+        div.navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+           
+          
+        div.collapse.navbar-collapse(id='bs-example-navbar-collapse-1')
+          ul.nav.navbar-nav.navbar-right
+
+            if (!user)
+              li
+                button.btn.btn-primary(data-toggle="modal", data-target="#login", style="margin-top:10px;") Login
+              li
+                button.btn.btn-primary(data-toggle="modal", data-target="#myModal", style="margin-left:20px;margin-top:10px;") Register
+            if (user)
+
+              li
+                a.navtext Welcome : #{user.name} &nbsp;&nbsp;&nbsp;Login Type : #{ user.usertype }  &nbsp;&nbsp; 
+
+              li
+                a.navtext(href='/') Home
+                
+              li
+                a.navtext(href='/logout') Logout
+
+              li
+                a.navtext(href='/account') Account
+
+              
+
+      a(href='/')      
+        img(src='/images/rrlogo.png', class='rrlogo')     
+                
+    div.container
+      div.content
+        block content
+
+    div.spacer
+      div.footer
+        div.foot
+          i.fa.fa-facebook-official.fa-5x.icons
+          i.fa.fa-twitter-square.fa-5x.icons
+          i.fa.fa-snapchat-square.fa-5x.icons
+          h5.footer &#9977; Copyright Roster Ready &#169; 2017
+
+
+  
+  
+   
+div.modal.fade#myModal
+    div.modal-dialog(role="document")
+        div.modal-content
+            div.modal-header
+              h5.modal-title Please select registration type
+                button.close(type="button", data-dismiss="modal", aria-label="Close")
+                  span(aria-hidden="true") &times;
+            div.modal-body
+             
+               button.btn.btn-lg.btn-primary.btn-block(type='submit', onclick="location.href='/register/Player'") Roster Ready Player
+               button.btn.btn-lg.btn-primary.btn-block(type='submit', onclick="location.href='/register/Team'") Roster Ready Team
+                
+            div.modal-footer
+              
+                button.btn.btn-secondary(type="button", data-dismiss="modal", aria-label="Close") Close
+
+   
+div.modal.fade#login
+    div.modal-dialog(role="document")
+        div.modal-content
+            div.modal-header
+              h5.modal-title Please log in to continue
+                button.close(type="button", data-dismiss="modal", aria-label="Close")
+                  span(aria-hidden="true") &times;
+            div.modal-body
+              form.form-signin(role='form', action='/login', method='post')
+                h2.form-signin-heading Please sign in
+                label.sr-only(for='inputEmail')
+                input.form-control(type='text', name='username', id='inputEmail', placeholder='Username', required, autofocus)
+                input.form-control(type='password', name='password', id='inputPassword', placeholder='Password')
+                button.btn.btn-lg.btn-primary.btn-block(type='submit') LOGIN
+            div.modal-footer
+              
+                button.btn.btn-secondary(type="button", data-dismiss="modal", aria-label="Close") Close                
+
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')

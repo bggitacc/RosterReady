@@ -1,0 +1,110 @@
+extends layout
+
+block content
+
+
+
+  if (rtype == "Player")
+    div.row(style="background:#fff;")
+      form.form-signin(role='form', action="/register",method="post")
+        h2.form-signin-heading Player Sign Up
+        input.form-control(type='text', name="name", placeholder='First Name')
+        input.form-control(type='text', name="lname", placeholder='Last Name')
+        input.form-control(type='text', name="username", placeholder='User Name')
+        input.form-control(type='email', name="email", placeholder='Email')
+        input.form-control(type='password', name="password", placeholder='Select Password')
+     
+
+        br
+        h4.interest Please select your sports of interest
+
+        div
+          div.col-sm-12
+        
+            div.checkbox
+              label(style='font-size: 1.5em') Baseball
+                input(type='checkbox', name='option1', checked=false)
+                span.cr
+                  i.cr-icon.fa.fa-check
+
+            div.checkbox
+              label(style='font-size: 1.5em') Basketball
+                input(type='checkbox', name='option2', checked=false)
+                span.cr
+                  i.cr-icon.fa.fa-check      
+
+            div.checkbox
+              label(style='font-size: 1.5em') Soccer
+                input(type='checkbox', name='option3', checked=false)
+                span.cr
+                  i.cr-icon.fa.fa-check
+
+            div.checkbox
+              label(style='font-size: 1.5em') Vollyball
+                input(type='checkbox', name='option4', checked=false)
+                span.cr
+                  i.cr-icon.fa.fa-check
+
+            div.checkbox
+              label(style='font-size: 1.5em') Football
+                input(type='checkbox', name='option5', checked=false)
+                span.cr
+                  i.cr-icon.fa.fa-check
+            div
+                  input(type='hidden', name='usertype', value='Player')
+
+                button.btn.btn-lg.btn-primary.btn-block(type='submit', style='margin-bottom:20px;') Create Account
+
+
+  if (rtype == "Team")
+    div.row(style="background:#fff;")
+      form.form-signin(role='form', action="/register",method="post")
+        h2.form-signin-heading Team Sign Up
+        input.form-control(type='text', name="name", placeholder='First Name')
+        input.form-control(type='text', name="lname", placeholder='Last Name')
+        input.form-control(type='text', name="username", placeholder='User Name')
+        input.form-control(type='email', name="email", placeholder='Email')
+        input.form-control(type='password', name="password", placeholder='Select Password')
+     
+
+        br
+        h4.interest Please select your sports of interest
+
+        div
+          div.col-sm-12
+        
+            div.checkbox
+              label(style='font-size: 1.5em') Baseball
+                input(type='checkbox', name='option1', checked=false)
+                span.cr
+                  i.cr-icon.fa.fa-check
+
+            div.checkbox
+              label(style='font-size: 1.5em') Basketball
+                input(type='checkbox', name='option2', checked=false)
+                span.cr
+                  i.cr-icon.fa.fa-check      
+
+            div.checkbox
+              label(style='font-size: 1.5em') Soccer
+                input(type='checkbox', name='option3', checked=false)
+                span.cr
+                  i.cr-icon.fa.fa-check
+
+            div.checkbox
+              label(style='font-size: 1.5em') Vollyball
+                input(type='checkbox', name='option4', checked=false)
+                span.cr
+                  i.cr-icon.fa.fa-check
+
+            div.checkbox
+              label(style='font-size: 1.5em') Football
+                input(type='checkbox', name='option5', checked=false)
+                span.cr
+                  i.cr-icon.fa.fa-check
+            div
+                  input(type='hidden', name='usertype', value='Team')
+
+                button.btn.btn-lg.btn-primary.btn-block(type='submit', style='margin-bottom:20px;') Create Account      
+
+      

@@ -1,0 +1,229 @@
+body {
+  background-color: #ddd;
+}
+
+
+.form-signin {
+ max-width: 400px;
+  padding: 15px;
+  margin: 0 auto;
+
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  position: relative;
+  margin-bottom: 20px;
+  
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  
+ 
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-bottom: 20px;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.rrlogo {
+  position:absolute;
+  top: 5px;
+  left:10px;
+  z-index: 1;
+  width: 220px;
+
+}
+.rrnav {
+  background: #000;
+  height: 55px;
+}
+.navtext {
+  font-size: 20px;
+}
+.navtext {
+  font-size: 16px;
+}
+.container {
+  width:100%;
+  
+  
+
+  
+}
+.content{
+  width:100%;
+  height: 700px;
+  position: relative;
+
+}
+.brand {
+
+  color: #fff;
+  text-align: center;
+}
+.brandrow {
+  height: 580px;
+  width: 100%;
+}
+
+h1.brand {
+
+  color: #ffbd00;
+  text-align: center;
+  font-size: 100px;
+  margin-top:140px;
+  text-shadow: 4px 4px  #3F1501;
+  position: absolute;
+  top: 15%;
+  text-align: center;
+  width: 100%;
+}
+img.brand {
+  position: absolute;
+  top: 400px;
+  left: 30%;
+  width: 500px;
+  
+  
+}
+p.brand {
+
+  color: #ffbd00;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 3px 3px  #3F1501;
+  font-style: italic;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+}
+.newaccount {
+  width: 100%;
+  height: 100%;
+background: #fff;
+
+}
+
+
+/* check boxes */
+.checkbox label:after, 
+.radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox .cr,
+.radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.radio .cr {
+    border-radius: 50%;
+}
+
+.checkbox .cr .cr-icon,
+.radio .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+
+.radio .cr .cr-icon {
+    margin-left: 0.04em;
+}
+
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + .cr > .cr-icon,
+.radio label input[type="radio"] + .cr > .cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+.radio label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled + .cr,
+.radio label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+}
+
+label {
+  display: inline;
+}
+img.menu {
+display:inline-block;
+  margin-left: 60px;
+  margin-right: 60px;
+
+}
+span.menu {
+  text-align: center;
+}
+div.footer {
+   height:150px;
+   background: #000;
+   
+  
+   width: 100%;
+
+}
+
+div.spacer{
+   background: #fff;
+  height: 20px;
+  width: 100%;
+   bottom: 0px;
+   margin-top:20px;
+}
+div.foot {
+  text-align: center;
+
+}i.icons {
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: #ffbd00;
+  text-shadow: 3px 3px  #3F1501;
+}
+h5.footer {
+  font-size: 16px;
+  color: #ffbd00;
+}
+
