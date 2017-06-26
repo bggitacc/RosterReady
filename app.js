@@ -10,14 +10,14 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/node-auth')
+mongoose.connect('mongodb://localhost/roster-ready')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 

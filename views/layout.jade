@@ -13,7 +13,7 @@ html
  
   
   body
-   
+   p #{user}
     nav.navbar.navbar-default.rrnav
       div.container-fluid
         div.navbar-header
@@ -61,7 +61,7 @@ html
           i.fa.fa-facebook-official.fa-5x.icons
           i.fa.fa-twitter-square.fa-5x.icons
           i.fa.fa-snapchat-square.fa-5x.icons
-          h5.footer &#9977; Copyright Roster Ready &#169; 2017
+          h1.footer &#9977; Copyright Roster Ready &#169; 2017
 
 
   
@@ -76,9 +76,15 @@ div.modal.fade#myModal
                   span(aria-hidden="true") &times;
             div.modal-body
              
-               button.btn.btn-lg.btn-primary.btn-block(type='submit', onclick="location.href='/register/Player'") Roster Ready Player
-               button.btn.btn-lg.btn-primary.btn-block(type='submit', onclick="location.href='/register/Team'") Roster Ready Team
-                
+               button.btn.btn-lg.btn-primary.btn-block(type='submit', onclick="location.href='/register/player'") Roster Ready Player
+               button.btn.btn-lg.btn-primary.btn-block(type='submit', onclick="location.href='/register/team'") Roster Ready Team
+               hr
+               form.form-signin(role='form', action='/login', method='post')
+                h2.form-signin-heading Please sign in
+                label.sr-only(for='inputEmail')
+                input.form-control(type='text', name='username', id='inputEmail', placeholder='Username', required, autofocus)
+                input.form-control(type='password', name='password', id='inputPassword', placeholder='Password')
+                button.btn.btn-lg.btn-primary.btn-block(type='submit') LOGIN
             div.modal-footer
               
                 button.btn.btn-secondary(type="button", data-dismiss="modal", aria-label="Close") Close

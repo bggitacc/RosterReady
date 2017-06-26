@@ -19,5 +19,12 @@ router.post('/login', auth.doLogin);
 
 // route for logout action
 router.get('/logout', auth.logout);
+// route for account action
+router.get('/account', auth.account);
+
+// route for update account action
+router.post('/updateuser', auth.updateuser);
+
+
 
 module.exports = router;

@@ -1,0 +1,111 @@
+extends layout
+
+block content
+
+
+
+  if (user.usertype == "player")
+    div.row(style="background:#fff;")
+      form.form-signin(role='form', action="/updateuser",method="post")
+        h2.form-signin-heading Player Account
+        h5 First Name
+        input.form-control(type='text', name="name", placeholder='#{user.name}')
+        h5 Last Name
+        input.form-control(type='text', name="lname", placeholder='#{user.lname}')
+        h5 User Name
+        input.form-control(type='text', name="username", placeholder='#{user.username}')
+        h5 Email
+        input.form-control(type='email', name="email", placeholder='#{user.email}')
+        h5 Phone
+        input.form-control(type='phone', name="phone", placeholder='#{user.phone}')
+        
+     
+
+        br
+        h4.interest Please select your sports of interest
+
+        div
+          div.col-sm-12
+        
+            div.checkbox
+              label(style='font-size: 1.5em') Baseball
+                input.sev_check(type='checkbox', name='baseball', id='baseball' )
+                span.cr
+                  i.cr-icon.fa.fa-check
+
+            div.checkbox
+              label(style='font-size: 1.5em') Basketball
+                input(type='checkbox', name='basketball')
+                span.cr
+                  i.cr-icon.fa.fa-check      
+
+            div.checkbox
+              label(style='font-size: 1.5em') Soccer
+                input(type='checkbox', name='soccer')
+                span.cr
+                  i.cr-icon.fa.fa-check
+
+            div.checkbox
+              label(style='font-size: 1.5em') Vollyball
+                input(type='checkbox', name='vollyball')
+                span.cr
+                  i.cr-icon.fa.fa-check
+
+            div.checkbox
+              label(style='font-size: 1.5em') Football
+                input(type='checkbox', name='football')
+                span.cr
+                  i.cr-icon.fa.fa-check
+            div
+                  
+                  
+                  input(type='hidden', name='_id', value='#{user._id}')
+            div
+            h4.interest Playing Status    
+            div.btn-group
+            div.radio
+              label(style='font-size: 1.5em') Available
+                input(type='radio', name='status', value='true', checked)
+                span.cr            
+                  i.cr-icon.fa.fa-circle
+
+            div.radio
+              label(style='font-size: 1.5em') Not Available
+                input(type='radio', name='status', value='false')
+                span.cr            
+                  i.cr-icon.fa.fa-circle
+            div
+                button.btn.btn-lg.btn-primary.btn-block(type='submit', style='margin-bottom:20px;') Create Account
+
+
+
+  if (user.usertype == "team")
+    div.row(style="background:#fff;")
+      form.form-signin(role='form', action="/updateuser",method="post")
+        h2.form-signin-heading Team Account
+        h5 First Name (Team Contact)
+        input.form-control(type='text', name="name", placeholder='#{ user.name }')
+        h5 Last Name (Team Contact)
+        input.form-control(type='text', name="lname", placeholder='#{user.lname}')
+        h5 Team Name
+        input.form-control(type='text', name="teamname", placeholder='#{user.teamname}')
+        h5 User Name
+        input.form-control(type='text', name="username", placeholder='#{user.username}')
+        h5 Phone
+        input.form-control(type='phone', name="phone", placeholder='#{user.phone}')
+        h5 Email Address
+        input.form-control(type='email', name="email", placeholder='#{user.email}')
+        
+     
+
+        br
+        div
+       
+                  
+                  input(type='hidden', name='_id', value='#{ user._id }')
+
+            div
+
+                    
+
+                button.btn.btn-lg.btn-primary.btn-block(type='submit', style='margin-bottom:20px;') Update Account      

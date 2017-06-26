@@ -4,14 +4,21 @@ block content
 
 
 
-  if (rtype == "Player")
+  if (rtype == "player")
     div.row(style="background:#fff;")
       form.form-signin(role='form', action="/register",method="post")
         h2.form-signin-heading Player Sign Up
+        h5 First Name
         input.form-control(type='text', name="name", placeholder='First Name')
+        h5 Last Name
         input.form-control(type='text', name="lname", placeholder='Last Name')
+        h5 User Name
         input.form-control(type='text', name="username", placeholder='User Name')
+        h5 Email
         input.form-control(type='email', name="email", placeholder='Email')
+        h5 Phone
+        input.form-control(type='phone', name="phone", placeholder='Phone')
+        h5 Password
         input.form-control(type='password', name="password", placeholder='Select Password')
      
 
@@ -23,87 +30,116 @@ block content
         
             div.checkbox
               label(style='font-size: 1.5em') Baseball
-                input(type='checkbox', name='option1', checked=false)
+                input.sev_check(type='checkbox', name='baseball', id='baseball')
                 span.cr
                   i.cr-icon.fa.fa-check
 
             div.checkbox
               label(style='font-size: 1.5em') Basketball
-                input(type='checkbox', name='option2', checked=false)
+                input(type='checkbox', name='basketball')
                 span.cr
                   i.cr-icon.fa.fa-check      
 
             div.checkbox
               label(style='font-size: 1.5em') Soccer
-                input(type='checkbox', name='option3', checked=false)
+                input(type='checkbox', name='soccer')
                 span.cr
                   i.cr-icon.fa.fa-check
 
             div.checkbox
               label(style='font-size: 1.5em') Vollyball
-                input(type='checkbox', name='option4', checked=false)
+                input(type='checkbox', name='vollyball')
                 span.cr
                   i.cr-icon.fa.fa-check
 
             div.checkbox
               label(style='font-size: 1.5em') Football
-                input(type='checkbox', name='option5', checked=false)
+                input(type='checkbox', name='football')
                 span.cr
                   i.cr-icon.fa.fa-check
             div
-                  input(type='hidden', name='usertype', value='Player')
+                  input(type='hidden', name='usertype', value='player')
+                  input(type='hidden', name='status', value='true')
+                  input(type='hidden', name='teamcat', value='none')
+            div
+            h4.interest Gender    
+            div.btn-group
+            div.radio
+              label(style='font-size: 1.5em') Female
+                input(type='radio', name='gender', value='f', checked)
+                span.cr            
+                  i.cr-icon.fa.fa-circle
 
+            div.radio
+              label(style='font-size: 1.5em') Male
+                input(type='radio', name='gender', value='m')
+                span.cr            
+                  i.cr-icon.fa.fa-circle
+            div
                 button.btn.btn-lg.btn-primary.btn-block(type='submit', style='margin-bottom:20px;') Create Account
 
 
-  if (rtype == "Team")
+  if (rtype == "team")
     div.row(style="background:#fff;")
       form.form-signin(role='form', action="/register",method="post")
         h2.form-signin-heading Team Sign Up
+        h5 First Name (Team Contact)
         input.form-control(type='text', name="name", placeholder='First Name')
+        h5 Last Name (Team Contact)
         input.form-control(type='text', name="lname", placeholder='Last Name')
+        h5 Team Name
+        input.form-control(type='text', name="teamname", placeholder='Team Name')
+        h5 User Name
         input.form-control(type='text', name="username", placeholder='User Name')
+        h5 Phone
+        input.form-control(type='phone', name="phone", placeholder='Phone')
+        h5 Email Address
         input.form-control(type='email', name="email", placeholder='Email')
+        h5 Password
         input.form-control(type='password', name="password", placeholder='Select Password')
      
 
         br
-        h4.interest Please select your sports of interest
-
         div
-          div.col-sm-12
-        
-            div.checkbox
+        h4.interest Please select your team category
+        div.btn-group
+        div.radio
+            div.radio
               label(style='font-size: 1.5em') Baseball
-                input(type='checkbox', name='option1', checked=false)
+                input(type='radio', name='teamcat', value='baseball', checked)
                 span.cr
-                  i.cr-icon.fa.fa-check
+                  i.cr-icon.fa.fa-circle
 
-            div.checkbox
+            div.radio
               label(style='font-size: 1.5em') Basketball
-                input(type='checkbox', name='option2', checked=false)
+                input(type='radio', name='teamcat', value='basketball')
                 span.cr
-                  i.cr-icon.fa.fa-check      
+                  i.cr-icon.fa.fa-circle      
 
-            div.checkbox
+            div.radio
               label(style='font-size: 1.5em') Soccer
-                input(type='checkbox', name='option3', checked=false)
+                input(type='radio', name='teamcat', value='soccer')
                 span.cr
-                  i.cr-icon.fa.fa-check
+                  i.cr-icon.fa.fa-circle
 
-            div.checkbox
+            div.radio
               label(style='font-size: 1.5em') Vollyball
-                input(type='checkbox', name='option4', checked=false)
+                input(type='radio', name='teamcat', value='vollyball')
                 span.cr
-                  i.cr-icon.fa.fa-check
+                  i.cr-icon.fa.fa-circle
 
-            div.checkbox
+            div.radio
               label(style='font-size: 1.5em') Football
-                input(type='checkbox', name='option5', checked=false)
+                input(type='radio', name='teamcat', value='football')
                 span.cr
-                  i.cr-icon.fa.fa-check
+                  i.cr-icon.fa.fa-circle
             div
-                  input(type='hidden', name='usertype', value='Team')
+                  input(type='hidden', name='usertype', value='team')
+                  input(type='hidden', name='status', value='true')
+
+            div
+
+                    
 
                 button.btn.btn-lg.btn-primary.btn-block(type='submit', style='margin-bottom:20px;') Create Account      
 
