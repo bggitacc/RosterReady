@@ -29,31 +29,31 @@ block content
         
             div.checkbox
               label(style='font-size: 1.5em') Baseball
-                input.sev_check(type='checkbox', name='baseball', id='baseball' )
+                input.sev_check(type='checkbox', name='baseball', id='#{user.baseball}' )
                 span.cr
                   i.cr-icon.fa.fa-check
 
             div.checkbox
               label(style='font-size: 1.5em') Basketball
-                input(type='checkbox', name='basketball')
+                input(type='checkbox', name='basketball', id='#{user.basketball}')
                 span.cr
                   i.cr-icon.fa.fa-check      
 
             div.checkbox
               label(style='font-size: 1.5em') Soccer
-                input(type='checkbox', name='soccer')
+                input(type='checkbox', name='soccer', id='#{user.soccer}')
                 span.cr
                   i.cr-icon.fa.fa-check
 
             div.checkbox
               label(style='font-size: 1.5em') Vollyball
-                input(type='checkbox', name='vollyball')
+                input(type='checkbox', name='vollyball', id='#{user.vollyball}')
                 span.cr
                   i.cr-icon.fa.fa-check
 
             div.checkbox
               label(style='font-size: 1.5em') Football
-                input(type='checkbox', name='football')
+                input(type='checkbox', name='football', id='#{user.football}')
                 span.cr
                   i.cr-icon.fa.fa-check
             div
@@ -75,7 +75,7 @@ block content
                 span.cr            
                   i.cr-icon.fa.fa-circle
             div
-                button.btn.btn-lg.btn-primary.btn-block(type='submit', style='margin-bottom:20px;') Create Account
+                button.btn.btn-lg.btn-primary.btn-block(type='submit', style='margin-bottom:20px;') Update Account
 
 
 
