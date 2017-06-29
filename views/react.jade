@@ -1,0 +1,20 @@
+extends layout
+
+
+
+
+block content
+        
+        | <br><br><h1>Transpile your code to public folder Setting in webpack.config.js config file</h1><br><br>
+        |    output: {
+        |    filename: "public/bundle.js"
+        |    }, <----------------- Setting In webpack.config.js
+        | <br><br>I Have Set Up This Page For You To work with <br><br>
+        | ReactDOM.render(
+        | <h1>This is where your React Component will show up in div <br>I have set up with id app in jade for you <br>inspect page or look at react.jade file in views folder to see</h1>
+        | , document.getElementById("app")); <---------------- In your react app.js render component here<br> 
+
+        div.brandrow
+            div(id='app')
+                
+        script(type="text/javascript",src='bundle.js')

@@ -29,4 +29,7 @@ router.post('/updateuser', auth.updateuser);
 // route for update account action
 router.post('/updateteam', auth.updateteam);
 
+// route for React Test
+router.get('/react', auth.react);
+
 module.exports = router;
