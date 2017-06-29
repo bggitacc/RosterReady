@@ -20,14 +20,18 @@ var UserSchema = new Schema({
                default: 'off'},
     football: {type : String,
                default: 'off'},
-    teamname: String,
+    teamname: {type: String,
+               default: 'none'},
     gender: {type : String,
                default: 'none'},
     status: {type : String,
                default: 'true'},
-    usertype: String,
+    usertype: {type: String,
+                default: 'player'},
     teamcat: {type : String,
-               default: 'none'}
+               default: 'none'},
+    location: {type : String,
+               default: 'San Diego City'}           
 
 });
 

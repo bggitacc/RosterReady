@@ -8,6 +8,7 @@ html
     link(rel='stylesheet', href='/stylesheets/style1.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     script(type="text/javascript", charset="utf-8", src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+
  
     
  
@@ -24,30 +25,30 @@ html
             span.icon-bar
            
           
-        div.collapse.navbar-collapse(id='bs-example-navbar-collapse-1')
+        div.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
 
             if (!user)
               li
                 button.btn.btn-primary(data-toggle="modal", data-target="#login", style="margin-top:10px;") Login
               li
-                button.btn.btn-primary(data-toggle="modal", data-target="#myModal", style="margin-left:20px;margin-top:10px;") Register
+                button.btn.btn-primary(data-toggle="modal", data-target="#myModal", style="margin-left:20px;margin-top:10px;margin-right:20px;") Register
             if (user)
 
               li
-                a.navtext Welcome : #{user.name} &nbsp;&nbsp;&nbsp;Login Type : #{ user.usertype }  &nbsp;&nbsp; 
+                h4(style="color:#fff;margin-top:15px;margin-right:300px") Welcome : #{user.name} 
 
               li
-                a.navtext(href='/') Home
+                button.btn.btn-primary(style="margin-left:20px;margin-top:10px;",onClick="window.location.href='/'") Home
                 
               li
-                a.navtext(href='/logout') Logout
+                button.btn.btn-primary(style="margin-left:20px;margin-top:10px;",onClick="window.location.href='/logout'") Logout
 
               li
-                a.navtext(href='/account') Account
+                button.btn.btn-primary(style="margin-left:20px;margin-top:10px;margin-right:20px;",onClick="window.location.href='/account'") Account
 
               
-
+           
       a(href='/')      
         img(src='/images/rrlogo.png', class='rrlogo')     
                 

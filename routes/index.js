@@ -26,5 +26,7 @@ router.get('/account', auth.account);
 router.post('/updateuser', auth.updateuser);
 
 
+// route for update account action
+router.post('/updateteam', auth.updateteam);
 
 module.exports = router;

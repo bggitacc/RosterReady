@@ -81,7 +81,7 @@ block content
 
   if (user.usertype == "team")
     div.row(style="background:#fff;")
-      form.form-signin(role='form', action="/updateuser",method="post")
+      form.form-signin(role='form', action="/updateteam",method="post")
         h2.form-signin-heading Team Account
         h5 First Name (Team Contact)
         input.form-control(type='text', name="name", placeholder='#{ user.name }')
@@ -104,8 +104,22 @@ block content
                   
                   input(type='hidden', name='_id', value='#{ user._id }')
 
+         div
+            h4.interest Team Status    
+            div.btn-group
+            div.radio
+              label(style='font-size: 1.5em') Available
+                input(type='radio', name='status', value='true', checked)
+                span.cr            
+                  i.cr-icon.fa.fa-circle
+
+            div.radio
+              label(style='font-size: 1.5em') Not Available
+                input(type='radio', name='status', value='false')
+                span.cr            
+                  i.cr-icon.fa.fa-circle    
+            
+            
+            
             div
-
-                    
-
                 button.btn.btn-lg.btn-primary.btn-block(type='submit', style='margin-bottom:20px;') Update Account      

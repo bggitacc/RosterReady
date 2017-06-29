@@ -1,11 +1,13 @@
 var mongoose = require("mongoose");
 var passport = require("passport");
 var User = require("../models/User");
+var Event = require("../models/Events");
 
 var userController = {};
 
 // Restrict access to root page
 userController.home = function(req, res) {
+
   res.render('index', { user : req.user });
 };
 
@@ -26,9 +28,6 @@ userController.doRegister = function(req, res) {
 
      console.log(req.body)
 
-  
-
-  
 
   User.register(new User({
     
@@ -46,7 +45,8 @@ userController.doRegister = function(req, res) {
     teamname: req.body.teamname,
     gender: req.body.gender,
     status: req.body.status,
-    teamcat: req.body.teamcat
+    teamcat: req.body.teamcat,
+    location: req.body.location
    
               }), req.body.password, function(err, user) {
 
@@ -89,7 +89,6 @@ userController.updateuser = function(req, res) {
    console.log("User = " + req.user)
 
    
-   
     if (req.body.name !== "") {req.user.name = req.body.name}
     if (req.body.lname !== "") {req.user.lname = req.body.lname}
     if (req.body.username !=="") {req.user.username = req.body.username}
@@ -127,4 +126,43 @@ userController.updateuser = function(req, res) {
    });
   
 };
+
+userController.updateteam = function(req, res) {
+  
+  console.log(req.body)
+
+   console.log("User = " + req.user)
+
+   
+    if (req.body.name !== "") {req.user.name = req.body.name}
+    if (req.body.lname !== "") {req.user.lname = req.body.lname}
+    if (req.body.username !=="") {req.user.username = req.body.username}
+    if (req.body.email !== "") {req.user.email = req.body.email}
+    if (req.body.phone !== "") {req.user.phone = req.body.phone}
+    if (req.body.teamname !== "") {req.user.teamname = req.body.teamname}
+    
+   
+    req.user.status = req.body.status
+   
+
+   console.log("New Team = " + req.user._id)
+
+   console.log(req.user._id)
+
+   User.findByIdAndUpdate(req.user._id,{$set : { name : req.user.name,
+                                                lname: req.user.lname,
+                                                username: req.user.username,
+                                                email: req.user.email,
+                                                phone: req.user.phone,
+                                                teamname: req.user.teamname,
+                                                status: req.body.status}},
+                                                {new:true}, 
+                                                function (err,doc){
+    console.log( "This is doc = " + doc)
+    res.render('account',{user: doc})
+
+   });
+  
+};
+
 module.exports = userController;
