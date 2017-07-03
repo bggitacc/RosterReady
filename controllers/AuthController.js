@@ -46,7 +46,8 @@ userController.doRegister = function(req, res) {
     gender: req.body.gender,
     status: req.body.status,
     teamcat: req.body.teamcat,
-    location: req.body.location
+    location: req.body.location,
+    picurl: req.body.picurl
    
               }), req.body.password, function(err, user) {
 
@@ -94,6 +95,7 @@ userController.updateuser = function(req, res) {
     if (req.body.username !=="") {req.user.username = req.body.username}
     if (req.body.email !== "") {req.user.email = req.body.email}
     if (req.body.phone !== "") {req.user.phone = req.body.phone}
+    if (req.body.picurl !== "") {req.user.picurl = req.body.picurl}
     if (req.body.baseball == null) {var baseball = "off"}else{var baseball = "on"}
     if (req.body.basketball == null) {var basketball = "off"}else{var basketball = "on"}
     if (req.body.soccer == null) {var soccer = "off"}else{var soccer = "on"}

@@ -7,7 +7,7 @@ block content
   if (user.usertype == "player")
     div.row(style="background:#fff;")
       form.form-signin(role='form', action="/updateuser",method="post")
-        h2.form-signin-heading Player Account
+        h2.form-signin-heading Player Account <img src="#{user.picurl}" style="height:70px;width:70px;border: 3px solid #000;border-radius:50%;">
         h5 First Name
         input.form-control(type='text', name="name", placeholder='#{user.name}')
         h5 Last Name
@@ -18,6 +18,8 @@ block content
         input.form-control(type='email', name="email", placeholder='#{user.email}')
         h5 Phone
         input.form-control(type='phone', name="phone", placeholder='#{user.phone}')
+        h5 Profile Picture Url
+        input.form-control(type='text', name="picurl", placeholder='#{user.picurl}')
         
      
 
@@ -29,7 +31,9 @@ block content
         
             div.checkbox
               label(style='font-size: 1.5em') Baseball
-                input.sev_check(type='checkbox', name='baseball', id='#{user.baseball}' )
+                <input type='checkbox' name ='baseball'>
+                
+                
                 span.cr
                   i.cr-icon.fa.fa-check
 
@@ -41,12 +45,12 @@ block content
 
             div.checkbox
               label(style='font-size: 1.5em') Soccer
-                input(type='checkbox', name='soccer', id='#{user.soccer}')
+                <input type='checkbox' name ='baseball' (if user.soccer == 'on' )  >
                 span.cr
                   i.cr-icon.fa.fa-check
 
             div.checkbox
-              label(style='font-size: 1.5em') Vollyball
+              label(style='font-size: 1.5em') Volleyball
                 input(type='checkbox', name='vollyball', id='#{user.vollyball}')
                 span.cr
                   i.cr-icon.fa.fa-check
@@ -82,7 +86,7 @@ block content
   if (user.usertype == "team")
     div.row(style="background:#fff;")
       form.form-signin(role='form', action="/updateteam",method="post")
-        h2.form-signin-heading Team Account
+        h2.form-signin-heading Team Account <img src="#{user.picurl}" style="height:70px;width:70px;border: 3px solid #000;border-radius:50%;">
         h5 First Name (Team Contact)
         input.form-control(type='text', name="name", placeholder='#{ user.name }')
         h5 Last Name (Team Contact)
@@ -95,6 +99,8 @@ block content
         input.form-control(type='phone', name="phone", placeholder='#{user.phone}')
         h5 Email Address
         input.form-control(type='email', name="email", placeholder='#{user.email}')
+        h5 Team Logo Url
+        input.form-control(type='text', name="picurl", placeholder='#{user.picurl}')
         
      
 
